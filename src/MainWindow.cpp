@@ -11,7 +11,9 @@ MainWindow::MainWindow(QWidget *parent) :
     QSurfaceFormat glFormat;
     glFormat.setRenderableType(QSurfaceFormat::OpenGL);
     glFormat.setDepthBufferSize(24);
-    glFormat.setOption(QSurfaceFormat::DebugContext);
+    glFormat.setStencilBufferSize(8);
+    glFormat.setVersion(3, 3);
+    glFormat.setProfile(QSurfaceFormat::CoreProfile);
 
     ui->scene->setFormat(glFormat);
     ui->scene->setFocus();
